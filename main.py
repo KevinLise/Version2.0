@@ -47,6 +47,11 @@ async def root():
     return FileResponse(os.path.join("static", "index.html"))
 
 
+@app.get("/inscripcion")
+async def inscripcion_page():
+    return FileResponse(os.path.join("static", "inscripcion.html"))
+
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 

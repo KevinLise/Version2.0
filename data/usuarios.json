@@ -53,5 +53,71 @@
     "last_interaction": "2026-08-31T11:19:00.749879",
     "created_at": "2026-08-31T11:17:23.642471",
     "query_count": 3
+  },
+  "user_fn39li49g": {
+    "user_id": "user_fn39li49g",
+    "name": "Kevin",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T11:47:33.294270",
+    "created_at": "2026-08-31T11:42:37.582938",
+    "query_count": 4
+  },
+  "1": {
+    "user_id": "1",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T12:07:15.735683",
+    "created_at": "2026-08-31T11:57:21.113950",
+    "query_count": 3
+  },
+  "user_qxqc0gvzx": {
+    "user_id": "user_qxqc0gvzx",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T11:58:23.253245",
+    "created_at": "2026-08-31T11:58:23.253204",
+    "query_count": 1
+  },
+  "user_mw43jz5kc": {
+    "user_id": "user_mw43jz5kc",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T12:00:22.665725",
+    "created_at": "2026-08-31T12:00:22.665675",
+    "query_count": 1
+  },
+  "user_651hjsxz4": {
+    "user_id": "user_651hjsxz4",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T12:04:47.007797",
+    "created_at": "2026-08-31T12:04:45.611234",
+    "query_count": 2
+  },
+  "user_mpmc5q7a4": {
+    "user_id": "user_mpmc5q7a4",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-08-31T12:07:52.317018",
+    "created_at": "2026-08-31T12:07:50.464897",
+    "query_count": 2
   }
 }

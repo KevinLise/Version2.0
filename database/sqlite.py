@@ -59,6 +59,24 @@ class Database:
                 CREATE INDEX IF NOT EXISTS idx_cache_expires ON cache(expires_at);
                 CREATE INDEX IF NOT EXISTS idx_metrics_event ON metrics(event_type);
                 CREATE INDEX IF NOT EXISTS idx_metrics_created ON metrics(created_at);
+
+                CREATE TABLE IF NOT EXISTS inscripciones (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre TEXT NOT NULL,
+                    edad INTEGER,
+                    telefono TEXT,
+                    email TEXT,
+                    idioma TEXT NOT NULL,
+                    nivel TEXT,
+                    modalidad TEXT,
+                    horario_preferido TEXT,
+                    mensaje TEXT,
+                    estado TEXT DEFAULT 'pendiente',
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                );
+
+                CREATE INDEX IF NOT EXISTS idx_inscripciones_estado ON inscripciones(estado);
+                CREATE INDEX IF NOT EXISTS idx_inscripciones_created ON inscripciones(created_at);
             """)
             await conn.commit()
         finally:

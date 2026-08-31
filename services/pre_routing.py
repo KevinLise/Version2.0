@@ -149,18 +149,18 @@ class PreRouter:
                 "Horario de atención telefónica: Lunes a viernes de 8:00 a.m. a 6:00 p.m.",
 
             # --- INSCRIPCIÓN ---
-            r"(?i)(inscrib|inscripci[oó]n|matricul|registro|c[oó]mo\s*me\s*inscribo)":
+            r"(?i)(inscrib|inscripci[oó]n|matricul|registro|c[oó]mo\s*me\s*inscribo|formulario)":
                 "Para inscribirte necesitas:\n"
                 "1. Documento de identidad vigente\n"
-                "2. Formulario de inscripción (presencial o en línea)\n"
-                "3. Comprobante de pago o primera cuota\n"
-                "4. Foto tamaño carnet\n\n"
+                "2. Comprobante de pago o primera cuota\n"
+                "3. Foto tamaño carnet\n\n"
+                "📄 **Completa tu inscripción aquí:**\n"
+                "🔗 http://localhost:8000/inscripcion\n\n"
                 "El proceso es:\n"
-                "1. Contacto inicial (teléfono, WhatsApp, correo o presencial)\n"
-                "2. Asesoría para elegir nivel y horario\n"
-                "3. Prueba de nivel gratuita (si tienes conocimientos previos)\n"
-                "4. Inscripción formal y pago\n"
-                "5. ¡Inicio de clases!\n\n"
+                "1. Diligencia el formulario\n"
+                "2. Un asesor te contactará para confirmar\n"
+                "3. Realiza el pago\n"
+                "4. ¡Inicio de clases!\n\n"
                 "¿Quieres que te ayude a elegir un curso?",
 
             # --- CERTIFICACIONES ---
@@ -257,6 +257,14 @@ class PreRouter:
                 "**Francés**: A1-A2 (2 meses) | B1 (2.5 meses)\n"
                 "**Portugués**: A1-A2 (2 meses)\n\n"
                 "Todos los cursos incluyen entre 32 y 48 horas de formación.",
+
+            # --- FORMULARIO DIRECTO ---
+            r"(?i)(formulario|form|formato|hoja\s*de\s*inscripci[oó]n)":
+                "📄 **Formulario de inscripción**\n\n"
+                "Completa tu inscripción aquí:\n"
+                "🔗 http://localhost:8000/inscripcion\n\n"
+                "O si prefieres, dime tu nombre, edad e idioma de interés y te registro directamente.\n\n"
+                "¿Necesitas ayuda con algo más?",
         }
 
     def _init_escalation_keywords(self) -> None:
