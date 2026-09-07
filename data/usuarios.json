@@ -130,5 +130,38 @@
     "last_interaction": "2026-08-31T12:11:36.614448",
     "created_at": "2026-08-31T12:11:15.221075",
     "query_count": 4
+  },
+  "user_003qwn6xd": {
+    "user_id": "user_003qwn6xd",
+    "name": "",
+    "age": null,
+    "interest": "",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-09-05T20:40:15.051526",
+    "created_at": "2026-09-05T20:37:41.559490",
+    "query_count": 6
+  },
+  "user_baekq2ifn": {
+    "user_id": "user_baekq2ifn",
+    "name": "",
+    "age": null,
+    "interest": "frances",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-09-05T21:00:36.902529",
+    "created_at": "2026-09-05T20:40:42.740865",
+    "query_count": 13
+  },
+  "user_3l4lpg5q0": {
+    "user_id": "user_3l4lpg5q0",
+    "name": "",
+    "age": null,
+    "interest": "ingles",
+    "status": "activo",
+    "last_query": "",
+    "last_interaction": "2026-09-05T21:08:18.537254",
+    "created_at": "2026-09-05T21:08:09.170466",
+    "query_count": 5
   }
 }

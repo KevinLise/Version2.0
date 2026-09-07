@@ -161,29 +161,21 @@ class ChatService:
 
         if not candidates:
             response_time = (time.time() - start_time) * 1000
-            escalation_result = await escalation_service.handle_escalation(
-                user_id=user_id,
-                user_name=user_name,
-                original_message=message,
-                llm_response="[ESCALAR_HUMANO: Información insuficiente en la base de conocimiento]",
-                context_retrieved="",
-            )
             await metrics_service.record_query(
                 user_id=user_id,
                 request_id=request_id,
                 relevance_score=0.0,
-                escalated=True,
                 response_time_ms=response_time,
             )
             return {
-                "response": "No encontré información suficiente en nuestra base de conocimiento para responder a tu pregunta. Un representante te contactará pronto.",
-                "escalated": True,
+                "response": "Soy AcademiaBot, el asistente virtual de la Academia de Idiomas. Puedo ayudarte con información sobre nuestros cursos, horarios, precios e inscripciones. ¿En qué puedo ayudarte?",
+                "escalated": False,
                 "cached": False,
                 "relevance_score": 0.0,
                 "request_id": request_id,
                 "input_tokens": 0,
                 "output_tokens": 0,
-                "model": "",
+                "model": "pre_routing",
             }
 
         reranked = await reranker.rerank(message, candidates)
@@ -191,30 +183,21 @@ class ChatService:
 
         if not is_above_threshold(best_score, settings.rag_score_threshold):
             response_time = (time.time() - start_time) * 1000
-            context_text = "\n\n".join([d["text"] for d in reranked[:3]])
-            escalation_result = await escalation_service.handle_escalation(
-                user_id=user_id,
-                user_name=user_name,
-                original_message=message,
-                llm_response="[ESCALAR_HUMANO: Información insuficiente en la base de conocimiento]",
-                context_retrieved=context_text,
-            )
             await metrics_service.record_query(
                 user_id=user_id,
                 request_id=request_id,
                 relevance_score=best_score,
-                escalated=True,
                 response_time_ms=response_time,
             )
             return {
-                "response": "No encontré información suficiente en nuestra base de conocimiento para responder a tu pregunta con certeza. Un representante te contactará pronto.",
-                "escalated": True,
+                "response": "Soy AcademiaBot, el asistente virtual de la Academia de Idiomas. No encontré información exacta sobre eso, pero puedo ayudarte con:\n\n• Precios de cursos de inglés, francés y portugués\n• Horarios de las clases\n• Inscripciones y requisitos\n• Certificaciones\n• Formas de pago y descuentos\n• Ubicación y contacto\n\n¿Qué te gustaría saber?",
+                "escalated": False,
                 "cached": False,
                 "relevance_score": best_score,
                 "request_id": request_id,
                 "input_tokens": 0,
                 "output_tokens": 0,
-                "model": "",
+                "model": "pre_routing",
             }
 
         context_chunks = [d["text"] for d in reranked if d["rerank_score"] > 0.1]

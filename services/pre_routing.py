@@ -102,7 +102,7 @@ class PreRouter:
                 "¿Te interesa algún idioma o nivel en particular?",
 
             # --- HORARIOS ---
-            r"(?i)(horario|hora|cu[aá]ndo|dia|d[ií]a).*(clase|curso)":
+            r"(?i)(horario|horarios|hora|cu[aá]ndo|dia|d[ií]a).*(clase|curso)":
                 "Nuestros horarios son:\n\n"
                 "**Inglés A1**: Lun-Mié 6-8pm | Mar-Jue 10am-12pm | Sáb 8-10am\n"
                 "**Inglés A2**: Lun-Mié 8-10pm | Mar-Jue 6-8pm | Sáb 10am-12pm\n"
@@ -110,6 +110,26 @@ class PreRouter:
                 "**Francés A1**: Mar-Jue 6-8pm | Sáb 10am-12pm\n"
                 "**Portugués A1**: Mié-Vie 6-8pm | Sáb 8-10am\n\n"
                 "¿Te interesa algún horario en específico?",
+
+            r"(?i)(horario|horarios|a\s*qu[eé]\s*hora|cu[aá]ndo\s*(dan|es|hay))":
+                "Nuestros horarios son:\n\n"
+                "**Inglés A1**: Lun-Mié 6-8pm | Mar-Jue 10am-12pm | Sáb 8-10am\n"
+                "**Inglés A2**: Lun-Mié 8-10pm | Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Inglés B1**: Lun-Mié 6-8pm | Mar-Jue 8-10pm | Sáb 8-10am\n"
+                "**Inglés B2**: Lun-Mié 8-10pm | Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Francés A1**: Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Portugués A1**: Mié-Vie 6-8pm | Sáb 8-10am\n\n"
+                "¿Te interesa algún idioma o nivel en particular?",
+
+            r"(?i)(que\s*horario|horario\s*de|horarios\s*de|a\s*que\s*horas)":
+                "Nuestros horarios son:\n\n"
+                "**Inglés A1**: Lun-Mié 6-8pm | Mar-Jue 10am-12pm | Sáb 8-10am\n"
+                "**Inglés A2**: Lun-Mié 8-10pm | Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Inglés B1**: Lun-Mié 6-8pm | Mar-Jue 8-10pm | Sáb 8-10am\n"
+                "**Inglés B2**: Lun-Mié 8-10pm | Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Francés A1**: Mar-Jue 6-8pm | Sáb 10am-12pm\n"
+                "**Portugués A1**: Mié-Vie 6-8pm | Sáb 8-10am\n\n"
+                "¿Te interesa algún idioma o nivel en particular?",
 
             r"(?i)(horario|horarios).*(atenci[oó]n|general|academia)":
                 "Nuestro horario de atención es:\n"
@@ -241,6 +261,33 @@ class PreRouter:
                 "El material de estudio está incluido en formato digital.\n\n"
                 "Si deseas material impreso, tiene un costo adicional de **$25.000 COP**.\n\n"
                 "¿Necesitas más información sobre el material?",
+
+            # --- NIVELES ESPECÍFICOS ---
+            r"(?i)(para|quiero|necesito|informaci[oó]n).*(a1|a2|b1|b2|c1|principiante|elemental|intermedio|avanzado)":
+                "¡Claro! Aquí tienes información de ese nivel:\n\n"
+                "**Inglés A1** (Principiante): $350.000 COP | 2 meses | 32 horas\n"
+                "**Inglés A2** (Elemental): $380.000 COP | 2 meses | 32 horas\n"
+                "**Inglés B1** (Intermedio Bajo): $450.000 COP | 2.5 meses | 40 horas\n"
+                "**Inglés B2** (Intermedio Alto): $500.000 COP | 3 meses | 48 horas\n"
+                "**Inglés C1** (Avanzado): $550.000 COP | 3 meses | 48 horas\n\n"
+                "**Francés A1**: $400.000 COP | 2 meses | 32 horas\n"
+                "**Francés A2**: $430.000 COP | 2 meses | 32 horas\n"
+                "**Francés B1**: $500.000 COP | 2.5 meses | 40 horas\n\n"
+                "**Portugués A1**: $380.000 COP | 2 meses | 32 horas\n"
+                "**Portugués A2**: $420.000 COP | 2 meses | 32 horas\n\n"
+                "¿Qué nivel o idioma te interesa?",
+
+            # --- QUÉ QUIERES / QUÉ BUSCAS ---
+            r"(?i)(qu[eé]\s*quiero|qu[eé]\s*busco|qu[eé]\s*necesito|ayudame|ayuda)":
+                "Soy AcademiaBot, tu asistente virtual. Puedo ayudarte con:\n\n"
+                "• 💰 **Precios** de cursos de inglés, francés y portugués\n"
+                "• 🕐 **Horarios** de las clases\n"
+                "• 📝 **Inscripciones** y requisitos\n"
+                "• 🎓 **Certificaciones** que ofrecemos\n"
+                "• 💳 **Formas de pago** y descuentos\n"
+                "• 📍 **Ubicación** y contacto\n"
+                "• 📚 **Idiomas** disponibles\n\n"
+                "Escribe tu pregunta y con gusto te ayudo.",
 
             # --- IDIOMAS DISPONIBLES ---
             r"(?i)(qu[eé]\s*idioma|idiomas|ense[nñ]an|imparten|ofrecen)":
